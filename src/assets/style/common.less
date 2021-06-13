@@ -1,0 +1,210 @@
+@import './reset.less';
+@import './variable.less';
+
+.flex {
+  /** flex布局 */
+  display: flex;
+}
+
+.flex-center {
+  /** 垂直水平居中 */
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+
+.flex-column {
+  /** 垂直排布flex */
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+}
+
+
+.ellipsis {
+  /** 超出文本用省略号代替 */
+  white-space  : nowrap;
+  text-overflow: ellipsis;
+  overflow     : hidden;
+}
+
+
+.ellipsis-multi-row(@row) {
+  /** 超出文本用省略号代替（多行） */
+  display           : -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @row;
+  overflow          : hidden;
+}
+
+
+.bg-img(@url) {
+  /** 背景图 */
+  background     : url(@url) no-repeat;
+  background-size: 100% 100%;
+}
+
+
+.bg(@color: #fff) {
+  /** 背景颜色 */
+  background: @color;
+}
+
+.border-box {
+  /** 怪异盒子 */
+  box-sizing: border-box;
+}
+
+.border(@color: red) {
+  /** 边框 */
+  border: 1px solid @color;
+}
+
+.br(@r: 10px) {
+  /** 圆角 */
+  border-radius: @r;
+}
+
+
+.square(@len) {
+  /** 正方形 */
+  width : @len;
+  height: @len;
+}
+
+
+.circle(@dia) {
+  /** 圆形 */
+  width        : @dia;
+  height       : @dia;
+  border-radius: 100%;
+}
+
+.border-bottom(@color: #ccc) {
+  border-bottom: 1px solid @color;
+}
+
+
+.click-active {
+  user-select: none;
+
+  &:active {
+    /** 点击状态 */
+    opacity: 0.7;
+  }
+}
+
+
+.show-scroll-y {
+  /** 显示滚动条 */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width        : 6px;
+    height       : 6px;
+    background   : rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius      : 4px;
+    // background-color: @lightGreen;
+    background         : rgba(117, 169, 160, 1);
+  }
+}
+
+.show-scroll-x {
+  /** 显示滚动条 */
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.show-scroll-xy {
+  /** 显示滚动条 */
+  overflow: auto;
+}
+
+/**
+* 设置IviewTable的高度
+* @h .ivu-table-body, .ivu-table-tip的高度
+* 使用方法：.i-table-body-height(calc(100vh - 400px))
+*/
+.i-table-body-height(@h) {
+  .i-table {
+
+    /deep/.ivu-table-wrapper {
+      .ivu-table-body,
+      .ivu-table-tip {
+        height: @h;
+      }
+    }
+  }
+}
+
+/** 等同于.i-table-body-height */
+.table-height(@h) {
+  .i-table-body-height(@h);
+}
+
+// 过渡样式
+.v-enter {
+  opacity: 0.5;
+}
+
+.v-enter-active {
+  transition: opacity .3s ease-in-out;
+}
+
+// 下拉框过渡
+.dropdown-enter,
+.dropdown-leave-to {
+  opacity         : 0;
+  transform       : scaleY(0.8);
+  transform-origin: center top;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition      : transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform-origin: center top;
+}
+
+// 旧页面快速消息，新页面慢慢淡出
+.show-enter {}
+
+// 页面过渡样式（后台管理向右滑走）
+.slide-enter {}
+
+.slide-enter-active {
+  opacity   : 0;
+  transition: opacity .3s;
+}
+
+.slide-leave-to {
+  opacity  : 0;
+  transform: translateX(50px);
+}
+
+.slide-leave-active {
+  left      : 0px;
+  position  : relative;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+
+
+// 加载中旋转
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
