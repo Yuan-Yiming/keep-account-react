@@ -14,7 +14,8 @@ class TabBar extends Component {
             dataList.map(item => {
               return (
                 <li onClick={this.handleClilck}
-                  className={`tab-bar-item${item.key === active ? ' active' : ''}`}>
+                  className={`tab-bar-item${item.key === active ? ' active' : ''}`}
+                  key={item.key}>
                   <NavLink to={item.path}>{item.title}</NavLink>
                 </li>
               )

@@ -28,6 +28,7 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const postcssNormalize = require('postcss-normalize');
+const { appSrc } = require('./paths');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -350,6 +351,11 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@': paths.appSrc,
+        '@c': paths.appComponents,
+        '@p': paths.appPages,
+        '@u': paths.appUtils,
+        '@i': paths.appImg,
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

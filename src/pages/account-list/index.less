@@ -1,0 +1,77 @@
+.account-list {
+  .board {
+    .bg(@primaryColor);
+    color  : #fff;
+    display: flex;
+    padding: 16px 12px;
+
+    .stat {
+      flex: 1;
+
+      .total {
+        .flex-column;
+        align-items: flex-start;
+        font-size  : 14px;
+
+        span {
+          &:nth-child(2) {
+            line-height: 28px;
+            font-size  : 18px;
+          }
+        }
+      }
+
+      .expense,
+      .income {
+        display     : inline-block;
+        font-size   : 12px;
+        margin-right: 16px;
+      }
+    }
+
+    .date-picker {
+      button {
+        height: 22px;
+
+        .za-icon {
+          margin-left: 4px;
+          font-size  : 12px;
+        }
+      }
+    }
+  }
+
+  .btn-wrap {
+    .bg(#fff);
+    .flex-center;
+    height: 42px;
+    button {
+      margin: 0 6px;
+    }
+  }
+
+  .record-list {}
+}
+.bill-detail {
+  .za-modal__dialog {
+    // background-color: red;
+    .za-modal__body {
+      padding: 0;
+      .bill-data {
+        padding: 20px;
+        .bill-data-item {
+          line-height: 36px;
+          display: flex;
+          justify-content: space-between;
+          // border-top: 1px solid #eee;
+          &:last-child {
+            // border-bottom: 1px solid #eee;
+          }
+        }
+      }
+      .za-modal__footer{
+        padding: 0;
+      }
+    }
+  }
+}

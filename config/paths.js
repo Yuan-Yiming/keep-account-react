@@ -68,6 +68,11 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
+  appComponents: resolveApp('src/components'),
+  appPages: resolveApp('src/pages'),
+  appUtils: resolveApp('src/utils'),
+  appImg: resolveApp('src/assets/img'),
+  appStyle: resolveApp('src/assets/style')
 };
 
 

@@ -15,9 +15,9 @@ export default class RecordList extends Component {
       <div className="record-list">
         <div className="header">
           <div className="date">{date}</div>
-          <div className="balabce">结余：{this.computedMoney}</div>
+          <div className="balance">结余：{this.computedMoney}</div>
         </div>
-        {dataList.map(data => <RecordListItem {...data} />)}
+        {dataList.map(data => <RecordListItem {...data} key={data.id}/>)}
       </div>
     )
   }
